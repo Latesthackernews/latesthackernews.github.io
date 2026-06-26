@@ -1,0 +1,28 @@
+name: Build Programmatic SEO Pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Generate pages
+        run: node scripts/generate.js
+
+      - name: Commit generated pages
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add blog/
+          git commit -m "Auto generate SEO pages" || echo "No changes"
+          git push
