@@ -1,0 +1,28 @@
+name: Cluster-Based Blog Generator
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Generate cluster blog pages
+        run: node ai/cluster-generator.js
+
+      - name: Commit generated content
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add content/
+          git commit -m "Cluster blog generation" || echo "No changes"
+          git push
