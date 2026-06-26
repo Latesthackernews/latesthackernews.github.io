@@ -1,0 +1,28 @@
+name: Keyword Intelligence Engine
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Run keyword intelligence
+        run: node ai/keyword-intel.js
+
+      - name: Commit keyword report
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add data/keyword-report.json
+          git commit -m "Update keyword intelligence" || echo "No changes"
+          git push
