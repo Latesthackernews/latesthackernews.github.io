@@ -1,20 +1,22 @@
 [
   {
-    "slug": "pdf-reference-guide",
-    "keyword": "PDF reference guide explained",
-    "title": "PDF Reference Guide Explained",
-    "intent": "informational"
+    "keyword": "SEO basics for beginners",
+    "slug": "seo-basics-for-beginners",
+    "cluster": "seo-fundamentals"
   },
   {
-    "slug": "how-to-organize-documents",
-    "keyword": "how to organize digital documents",
-    "title": "How to Organize Digital Documents",
-    "intent": "informational"
+    "keyword": "programmatic SEO explained",
+    "slug": "programmatic-seo-explained",
+    "cluster": "seo-automation"
   },
   {
-    "slug": "external-resource-seo",
-    "keyword": "external resource SEO strategy",
-    "title": "External Resource SEO Strategy",
-    "intent": "educational"
+    "keyword": "how Google indexing works",
+    "slug": "how-google-indexing-works",
+    "cluster": "seo-fundamentals"
+  },
+  {
+    "keyword": "internal linking strategy SEO",
+    "slug": "internal-linking-strategy-seo",
+    "cluster": "seo-architecture"
   }
 ]
