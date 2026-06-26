@@ -1,24 +1,132 @@
 [
-  {
-    "slug": "grv-pdf-guide",
-    "title": "GRV PDF Guide Explained",
-    "description": "Structured explanation of the GRV reference PDF document.",
-    "content": [
-      "The GRV PDF is a publicly available document hosted externally.",
-      "This article provides structured context for understanding it.",
-      "Users should always refer to the original source for accuracy."
-    ],
-    "url": "https://www.grv.org.au/wp-content/uploads/wp_dndcf7_uploads/wpcf7-files/movshi1.pdf"
-  },
-  {
-    "slug": "reference-documents-guide",
-    "title": "How to Organize Reference Documents",
-    "description": "Guide for structuring external document references for SEO and clarity.",
-    "content": [
-      "Structured documentation improves clarity and indexing.",
-      "Grouping external resources helps search engines understand context.",
-      "Internal linking increases crawl depth."
-    ],
-    "url": "https://example.com"
-  }
+{
+"slug": "seo-basics-for-beginners",
+"title": "SEO Basics for Beginners",
+"description": "Learn the fundamentals of search engine optimization and improve your website rankings.",
+"content": [
+"SEO stands for Search Engine Optimization.",
+"SEO helps websites rank higher in search engine results.",
+"Keyword research is the foundation of every SEO strategy.",
+"Technical SEO ensures search engines can properly crawl and index pages.",
+"Creating valuable content improves rankings and user engagement."
+],
+"url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
+},
+{
+"slug": "keyword-research-guide",
+"title": "Keyword Research Guide for Beginners",
+"description": "Discover how to find profitable keywords for your website and content strategy.",
+"content": [
+"Keyword research helps identify topics users search for.",
+"Long-tail keywords often have lower competition.",
+"Search intent should guide your content creation process.",
+"SEO tools can help uncover valuable keyword opportunities.",
+"Targeting relevant keywords improves organic traffic."
+],
+"url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
+},
+{
+"slug": "technical-seo-checklist",
+"title": "Technical SEO Checklist",
+"description": "Essential technical SEO practices to improve crawling, indexing, and performance.",
+"content": [
+"Technical SEO focuses on website infrastructure.",
+"Fast loading speeds improve both rankings and user experience.",
+"XML sitemaps help search engines discover pages.",
+"Structured data enhances search result appearance.",
+"Mobile-friendly websites perform better in search."
+],
+"url": "https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview"
+},
+{
+"slug": "on-page-seo-guide",
+"title": "Complete On-Page SEO Guide",
+"description": "Learn the most important on-page SEO techniques for higher rankings.",
+"content": [
+"Title tags remain one of the most important ranking factors.",
+"Meta descriptions improve click-through rates.",
+"Header tags help organize content for users and search engines.",
+"Internal linking strengthens website structure.",
+"Optimized images improve page performance."
+],
+"url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
+},
+{
+"slug": "content-marketing-strategy",
+"title": "Content Marketing Strategy Guide",
+"description": "Build an effective content marketing strategy to grow organic traffic.",
+"content": [
+"Content marketing focuses on creating valuable information for audiences.",
+"Consistent publishing builds authority over time.",
+"Understanding user intent improves content performance.",
+"Quality content attracts backlinks naturally.",
+"Regular updates keep content fresh and relevant."
+],
+"url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
+},
+{
+"slug": "website-speed-optimization",
+"title": "Website Speed Optimization Tips",
+"description": "Improve your website loading speed with practical optimization techniques.",
+"content": [
+"Page speed significantly affects user experience.",
+"Image compression reduces page size.",
+"Caching improves website performance.",
+"Minifying CSS and JavaScript decreases load times.",
+"Fast websites generally experience lower bounce rates."
+],
+"url": "https://web.dev/articles/fast"
+},
+{
+"slug": "link-building-strategies",
+"title": "Link Building Strategies That Work",
+"description": "Explore effective link building methods for sustainable SEO growth.",
+"content": [
+"Backlinks remain an important ranking signal.",
+"Creating exceptional content encourages natural links.",
+"Guest posting can increase brand visibility.",
+"Internal linking distributes authority across your website.",
+"Quality matters more than quantity in link building."
+],
+"url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
+},
+{
+"slug": "mobile-seo-best-practices",
+"title": "Mobile SEO Best Practices",
+"description": "Optimize your website for mobile users and improve search performance.",
+"content": [
+"Most web searches now occur on mobile devices.",
+"Responsive design provides a better user experience.",
+"Mobile-friendly pages are easier to use.",
+"Fast loading speeds are critical on mobile.",
+"Google primarily uses mobile-first indexing."
+],
+"url": "https://developers.google.com/search/mobile-sites"
+},
+{
+"slug": "local-seo-guide",
+"title": "Local SEO Guide for Businesses",
+"description": "Learn how local businesses can improve visibility in local search results.",
+"content": [
+"Local SEO helps businesses appear in nearby searches.",
+"Consistent business information builds trust.",
+"Customer reviews influence local rankings.",
+"Location-specific content can improve visibility.",
+"Local citations strengthen online presence."
+],
+"url": "https://developers.google.com/search/docs/appearance/local-business"
+},
+{
+"slug": "structured-data-explained",
+"title": "Structured Data Explained",
+"description": "Understand structured data and how it enhances search visibility.",
+"content": [
+"Structured data helps search engines understand page content.",
+"Schema markup can enable rich results.",
+"JSON-LD is Google's recommended structured data format.",
+"Structured data improves search result presentation.",
+"Testing markup ensures proper implementation."
+],
+"url": "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data"
+}
 ]
