@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "pdf-reference-guide",
+    "keyword": "PDF reference guide explained",
+    "title": "PDF Reference Guide Explained",
+    "intent": "informational"
+  },
+  {
+    "slug": "how-to-organize-documents",
+    "keyword": "how to organize digital documents",
+    "title": "How to Organize Digital Documents",
+    "intent": "informational"
+  },
+  {
+    "slug": "external-resource-seo",
+    "keyword": "external resource SEO strategy",
+    "title": "External Resource SEO Strategy",
+    "intent": "educational"
+  }
+]
