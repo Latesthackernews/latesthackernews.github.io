@@ -5,31 +5,39 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-async function expandContent(title, description) {
+async function generateArticle(title, description) {
   const model = genAI.getGenerativeModel({
     model: "gemini-2.5-flash"
   });
 
   const prompt = `
-Write a detailed SEO article.
+You are an expert SEO content writer.
 
-Title: ${title}
+Write a HIGH QUALITY SEO article.
 
-Description: ${description}
+TITLE: ${title}
+DESCRIPTION: ${description}
 
-Requirements:
-- Minimum 1200 words.
-- Use HTML only.
-- Use <h2>, <h3>, <p>, <ul>, and <li> tags.
-- Begin with an introduction.
-- Add practical examples.
-- Add a conclusion.
-- Do not use Markdown.
-- Do not include <html> or <body> tags.
+RULES:
+- 2000+ words minimum
+- Output ONLY HTML (no markdown)
+- Use <h1>, <h2>, <h3>, <p>, <ul>, <li>
+- Add introduction
+- Add step-by-step sections
+- Add real examples
+- Add FAQ section
+- Add conclusion
+- SEO optimized
 `;
 
   const result = await model.generateContent(prompt);
-  return result.response.text();
+
+  let text = result.response.text();
+
+  // remove markdown fences if Gemini adds them
+  text = text.replace(/```html|```/g, "");
+
+  return text;
 }
 
 async function buildSite() {
@@ -55,7 +63,12 @@ async function buildSite() {
 `;
 
   for (const post of posts) {
-    console.log("Generating article:", post.title);
+    console.log("Generating:", post.title);
+
+    const article = await generateArticle(
+      post.title,
+      post.description
+    );
 
     let html = template;
 
@@ -63,16 +76,7 @@ async function buildSite() {
     html = html.replace(/{{description}}/g, post.description);
     html = html.replace(/{{slug}}/g, post.slug);
     html = html.replace(/{{url}}/g, post.url);
-
-    const articleContent = await expandContent(
-      post.title,
-      post.description
-    );
-
-    html = html.replace(
-      "{{content}}",
-      articleContent
-    );
+    html = html.replace("{{content}}", article);
 
     fs.writeFileSync(
       "./blog/" + post.slug + ".html",
@@ -83,24 +87,15 @@ async function buildSite() {
     sitemap += `
   <url>
     <loc>https://latesthackernews.github.io/blog/${post.slug}.html</loc>
-  </url>
-`;
-
-    console.log("Generated:", post.slug);
+  </url>`;
   }
 
   sitemap += `
 </urlset>`;
 
-  fs.writeFileSync(
-    "./sitemap.xml",
-    sitemap,
-    "utf8"
-  );
+  fs.writeFileSync("./sitemap.xml", sitemap, "utf8");
 
-  console.log("Site generation completed.");
+  console.log("DONE: Site generated successfully");
 }
 
-buildSite().catch((error) => {
-  console.error(error);
-});
+buildSite().catch(console.error);
