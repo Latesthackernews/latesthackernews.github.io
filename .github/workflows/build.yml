@@ -1,4 +1,4 @@
-name: Build Programmatic SEO Pages
+name: AI SEO Factory Build
 
 on:
   push:
@@ -16,13 +16,13 @@ jobs:
         with:
           node-version: 18
 
-      - name: Generate pages
-        run: node scripts/generate.js
+      - name: Generate AI SEO pages
+        run: node ai/generate.js
 
-      - name: Commit generated pages
+      - name: Commit generated content
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add blog/
-          git commit -m "Auto generate SEO pages" || echo "No changes"
+          git add content/
+          git commit -m "AI SEO factory update" || echo "No changes"
           git push
