@@ -1,25 +1,45 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Blog</title>
-  <meta name="description" content="SEO blog articles">
-
-  <link rel="stylesheet" href="/css/style.css">
+  <title>Blog | Latest Hacker News</title>
+  <meta name="description" content="Browse all articles and guides published on Latest Hacker News.">
 </head>
-
 <body>
 
-<h1>Blog</h1>
+  <h1>Blog Articles</h1>
 
-<p>All generated SEO articles:</p>
+  <ul id="posts"></ul>
 
-<ul>
-  <li><a href="/content/seo-basics-for-beginners.html">SEO Basics for Beginners</a></li>
-  <li><a href="/content/programmatic-seo-explained.html">Programmatic SEO Explained</a></li>
-</ul>
+  <script>
+    fetch('/content/posts.json')
+      .then(response => response.json())
+      .then(posts => {
 
-<p><a href="/">← Home</a></p>
+        const container = document.getElementById('posts');
+
+        posts.forEach(post => {
+
+          const li = document.createElement('li');
+
+          li.innerHTML = `
+            <a href="/blog/${post.slug}.html">
+              ${post.title}
+            </a>
+            <p>${post.description}</p>
+          `;
+
+          container.appendChild(li);
+        });
+
+      })
+      .catch(error => {
+        document.getElementById('posts').innerHTML =
+          "<p>Unable to load articles.</p>";
+      });
+  </script>
 
 </body>
 </html>
+
