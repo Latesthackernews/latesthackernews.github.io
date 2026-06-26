@@ -99,3 +99,8 @@ async function buildSite() {
 }
 
 buildSite().catch(console.error);
+function generateInternalLinks(posts) {
+  return posts.map(p => {
+    return `<li><a href="/blog/${p.slug}.html">${p.title}</a></li>`;
+  }).join("\n");
+}
