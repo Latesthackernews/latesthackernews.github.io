@@ -1,4 +1,4 @@
-name: Generate Sitemap
+name: Sitemap Update
 
 on:
   push:
@@ -9,26 +9,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Generate sitemap.xml
+      - name: Build sitemap
         run: |
-          printf '%s\n' \
-          '<?xml version="1.0" encoding="UTF-8"?>' \
-          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' \
-          '  <url>' \
-          '    <loc>https://latesthackernews.github.io/</loc>' \
-          '  </url>' \
-          '  <url>' \
-          '    <loc>https://latesthackernews.github.io/blog/grv-pdf-guide.html</loc>' \
-          '  </url>' \
-          '</urlset>' > sitemap.xml
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
+          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
+
+          echo '<url><loc>https://latesthackernews.github.io/</loc></url>' >> sitemap.xml
+
+          for file in content/*.html; do
+            name=$(basename "$file")
+            echo "<url><loc>https://latesthackernews.github.io/content/$name</loc></url>" >> sitemap.xml
+          done
+
+          echo '</urlset>' >> sitemap.xml
 
       - name: Commit sitemap
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add sitemap.xml
-          git commit -m "Update sitemap" || echo "No changes"
+          git commit -m "Auto sitemap update" || echo "No changes"
           git push
