@@ -12,27 +12,23 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Create sitemap
+      - name: Generate sitemap.xml
         run: |
-          cat > sitemap.xml << 'EOF'
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://latesthackernews.github.io/</loc>
-  </url>
-
-  <url>
-    <loc>https://latesthackernews.github.io/blog/grv-pdf-guide.html</loc>
-  </url>
-
-</urlset>
-EOF
+          printf '%s\n' \
+          '<?xml version="1.0" encoding="UTF-8"?>' \
+          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' \
+          '  <url>' \
+          '    <loc>https://latesthackernews.github.io/</loc>' \
+          '  </url>' \
+          '  <url>' \
+          '    <loc>https://latesthackernews.github.io/blog/grv-pdf-guide.html</loc>' \
+          '  </url>' \
+          '</urlset>' > sitemap.xml
 
       - name: Commit sitemap
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add sitemap.xml
-          git commit -m "Auto update sitemap" || echo "No changes"
+          git commit -m "Update sitemap" || echo "No changes"
           git push
