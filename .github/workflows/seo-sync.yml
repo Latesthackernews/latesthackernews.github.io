@@ -1,0 +1,45 @@
+name: Auto Sync SEO Generator
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+concurrency:
+  group: seo-pipeline
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout latest code
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 2. Setup Node
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      # 3. OPTIONAL: ensure latest remote state (auto-sync fix)
+      - name: Sync with remote
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git pull origin main --rebase || echo "no changes to pull"
+
+      # 4. Run SEO generator
+      - name: Run SEO generator
+        run: node ai/generate.js
+
+      # 5. Commit generated files safely
+      - name: Commit changes
+        run: |
+          git add .
+          git commit -m "auto seo sync update" || echo "no changes"
+          git push origin main
