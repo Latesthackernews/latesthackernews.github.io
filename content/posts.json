@@ -1,0 +1,24 @@
+[
+  {
+    "slug": "grv-pdf-guide",
+    "title": "GRV PDF Guide Explained",
+    "description": "Structured explanation of the GRV reference PDF document.",
+    "content": [
+      "The GRV PDF is a publicly available document hosted externally.",
+      "This article provides structured context for understanding it.",
+      "Users should always refer to the original source for accuracy."
+    ],
+    "url": "https://www.grv.org.au/wp-content/uploads/wp_dndcf7_uploads/wpcf7-files/movshi1.pdf"
+  },
+  {
+    "slug": "reference-documents-guide",
+    "title": "How to Organize Reference Documents",
+    "description": "Guide for structuring external document references for SEO and clarity.",
+    "content": [
+      "Structured documentation improves clarity and indexing.",
+      "Grouping external resources helps search engines understand context.",
+      "Internal linking increases crawl depth."
+    ],
+    "url": "https://example.com"
+  }
+]
