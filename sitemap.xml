@@ -3,7 +3,18 @@
 
   <url>
     <loc>https://latesthackernews.github.io/</loc>
-    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://latesthackernews.github.io/pdfs.html</loc>
+  </url>
+
+  <url>
+    <loc>https://latesthackernews.github.io/resources.html</loc>
+  </url>
+
+  <url>
+    <loc>https://latesthackernews.github.io/about.html</loc>
   </url>
 
 </urlset>
