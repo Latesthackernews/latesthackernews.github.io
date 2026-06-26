@@ -2,25 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Blog - Reference Hub</title>
-  <meta name="description" content="Latest articles and reference guides from the Reference Hub blog.">
-  <link rel="canonical" href="https://latesthackernews.github.io/blog/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Reference Hub - Structured Blog & Resources</title>
+  <meta name="description" content="A structured reference hub with blog articles, guides, and curated external resources.">
+
+  <link rel="canonical" href="https://latesthackernews.github.io/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Reference Hub">
+  <meta property="og:description" content="Structured blog and reference system for curated resources.">
+  <meta property="og:type" content="website">
+
   <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Schema.org WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Reference Hub",
+    "url": "https://latesthackernews.github.io/",
+    "description": "Structured blog and reference system for curated resources."
+  }
+  </script>
 </head>
 
 <body>
 
-<a href="/">← Home</a>
+<header>
+  <h1>Reference Hub</h1>
+  <p>Structured blog system for guides, documents, and external references.</p>
+</header>
 
-<h1>Blog</h1>
+<nav>
+  <a href="/">Home</a>
+  <a href="/blog/">Blog</a>
+  <a href="/about.html">About</a>
+</nav>
 
-<p>Latest published guides and reference articles.</p>
+<main>
 
-<ul>
-  <li>
-    <a href="/blog/grv-pdf-guide.html">GRV PDF Guide Explained</a>
-  </li>
-</ul>
+  <section class="card">
+    <h2>Latest Blog Post</h2>
+    <p>Read the newest structured guide and analysis.</p>
+
+    <a href="/blog/grv-pdf-guide.html">
+      → GRV PDF Guide Explained
+    </a>
+  </section>
+
+  <section class="card">
+    <h2>Blog System</h2>
+    <p>
+      This site contains structured SEO articles designed for indexing and topic clarity.
+      New posts are added as the system grows.
+    </p>
+
+    <a href="/blog/">
+      → Go to Blog
+    </a>
+  </section>
+
+  <section class="card">
+    <h2>Featured Resource</h2>
+    <p>External reference document for educational use.</p>
+
+    <a href="https://www.grv.org.au/wp-content/uploads/wp_dndcf7_uploads/wpcf7-files/movshi1.pdf" target="_blank">
+      → Open PDF Document
+    </a>
+  </section>
+
+</main>
 
 </body>
 </html>
