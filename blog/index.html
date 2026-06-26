@@ -1,45 +1,212 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Blog | Latest Hacker News</title>
-  <meta name="description" content="Browse all articles and guides published on Latest Hacker News.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SEO Blog | Latest Hacker News</title>
+
+<meta name="description" content="Latest SEO articles, digital marketing guides, and optimization tutorials.">
+
+<link rel="canonical" href="https://latesthackernews.github.io/blog/">
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  line-height: 1.7;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+.article {
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+}
+
+.article h2 {
+  margin-bottom: 10px;
+}
+
+.article a {
+  text-decoration: none;
+}
+
+.article p {
+  color: #555;
+}
+</style>
 </head>
+
 <body>
 
-  <h1>Blog Articles</h1>
+<h1>SEO Blog</h1>
 
-  <ul id="posts"></ul>
+<p>Explore our latest SEO guides, tutorials, and digital marketing resources.</p>
 
-  <script>
-    fetch('/content/posts.json')
-      .then(response => response.json())
-      .then(posts => {
+<div class="article">
+  <h2>
+    <a href="/blog/seo-basics-for-beginners.html">
+      SEO Basics for Beginners
+    </a>
+  </h2>
 
-        const container = document.getElementById('posts');
+  <p>Learn the fundamentals of search engine optimization and improve your website rankings.</p>
 
-        posts.forEach(post => {
+  <p>
+    <a href="/blog/seo-basics-for-beginners.html">
+      Read Article →
+    </a>
+  </p>
+</div>
 
-          const li = document.createElement('li');
+<div class="article">
+  <h2>
+    <a href="/blog/keyword-research-guide.html">
+      Keyword Research Guide
+    </a>
+  </h2>
 
-          li.innerHTML = `
-            <a href="/blog/${post.slug}.html">
-              ${post.title}
-            </a>
-            <p>${post.description}</p>
-          `;
+  <p>A beginner-friendly guide to finding profitable keywords for SEO.</p>
 
-          container.appendChild(li);
-        });
+  <p>
+    <a href="/blog/keyword-research-guide.html">
+      Read Article →
+    </a>
+  </p>
+</div>
 
-      })
-      .catch(error => {
-        document.getElementById('posts').innerHTML =
-          "<p>Unable to load articles.</p>";
-      });
-  </script>
+<div class="article">
+  <h2>
+    <a href="/blog/technical-seo-checklist.html">
+      Technical SEO Checklist
+    </a>
+  </h2>
+
+  <p>Essential technical SEO practices to improve website performance and indexing.</p>
+
+  <p>
+    <a href="/blog/technical-seo-checklist.html">
+      Read Article →
+    </a>
+  </p>
+</div>
+
+<div class="article">
+  <h2>
+    <a href="/blog/on-page-seo-guide.html">
+      Complete On-Page SEO Guide
+    </a>
+  </h2>
+
+  <p>Learn the essential on-page SEO techniques for higher rankings.</p>
+
+  <p>
+    <a href="/blog/on-page-seo-guide.html">
+      Read Article →
+    </a>
+  </p>
+</div>
+
+<div class="article">
+  <h2>
+    <a href="/blog/content-marketing-strategy.html">
+      Content Marketing Strategy Guide
+    </a>
+  </h2>
+
+  <p>Build a content strategy that attracts visitors and grows organic traffic.</p>
+
+  <p>
+    <a href="/blog/content-marketing-strategy.html">
+      Read Article →
+    </a>
+  </p>
+</div>
+
+<div class="article">
+  <h2>
+    <a href="/blog/website-speed-optimization.html">
+      Website Speed Optimization Tips
+    </a>
+  </h2>
+
+  <p>Practical techniques to improve website loading speed and user experience.</p>
+
+  <p>
+    <a href="/blog/website-speed-optimization.html">
+      Read Article →
+    </a>
+  </p>
+</div>
+
+<div class="article">
+  <h2>
+    <a href="/blog/link-building-strategies.html">
+      Link Building Strategies
+    </a>
+  </h2>
+
+  <p>Discover effective and sustainable link building methods.</p>
+
+  <p>
+    <a href="/blog/link-building-strategies.html">
+      Read Article →
+    </a>
+  </p>
+</div>
+
+<div class="article">
+  <h2>
+    <a href="/blog/mobile-seo-best-practices.html">
+      Mobile SEO Best Practices
+    </a>
+  </h2>
+
+  <p>Learn how to optimize websites for mobile users and search engines.</p>
+
+  <p>
+    <a href="/blog/mobile-seo-best-practices.html">
+      Read Article →
+    </a>
+  </p>
+</div>
+
+<div class="article">
+  <h2>
+    <a href="/blog/local-seo-guide.html">
+      Local SEO Guide
+    </a>
+  </h2>
+
+  <p>Improve local search visibility and attract nearby customers.</p>
+
+  <p>
+    <a href="/blog/local-seo-guide.html">
+      Read Article →
+    </a>
+  </p>
+</div>
+
+<div class="article">
+  <h2>
+    <a href="/blog/structured-data-explained.html">
+      Structured Data Explained
+    </a>
+  </h2>
+
+  <p>Understand schema markup and rich results in search engines.</p>
+
+  <p>
+    <a href="/blog/structured-data-explained.html">
+      Read Article →
+    </a>
+  </p>
+</div>
 
 </body>
 </html>
-
