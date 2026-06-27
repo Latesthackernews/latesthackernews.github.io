@@ -1,151 +1,142 @@
 [
-{
-"slug": "seo-basics-for-beginners",
-"title": "SEO Basics for Beginners",
-"description": "Learn the fundamentals of search engine optimization and improve your website rankings.",
-"content": [
-"SEO stands for Search Engine Optimization and helps websites gain visibility in search engines.",
-"Understanding search intent is one of the first steps toward creating successful content.",
-"Keyword research helps you discover what your audience is searching for online.",
-"Technical SEO ensures search engines can crawl and index your pages correctly.",
-"Creating useful and original content is essential for long-term SEO success.",
-"Internal linking helps search engines understand your website structure.",
-"Optimizing titles and meta descriptions can improve click-through rates.",
-"Building authority takes time and requires consistent publishing of valuable content."
-],
-"url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
-},
-{
-"slug": "keyword-research-guide",
-"title": "Keyword Research Guide",
-"description": "A beginner-friendly guide to finding profitable keywords for SEO.",
-"content": [
-"Keyword research is the process of discovering the terms people use in search engines.",
-"Long-tail keywords are often easier to rank for than broad keywords.",
-"Understanding user intent helps you create content that satisfies searchers.",
-"Competitor analysis can reveal valuable keyword opportunities.",
-"Organizing keywords into topic clusters improves website structure."
-],
-"url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
-},
-{
-"slug": "technical-seo-checklist",
-"title": "Technical SEO Checklist",
-"description": "Essential technical SEO practices to improve website performance and indexing.",
-"content": [
-"A technically sound website is easier for search engines to crawl.",
-"Page speed and Core Web Vitals affect user experience and rankings.",
-"XML sitemaps help search engines discover important pages.",
-"Mobile optimization is critical because most searches happen on mobile devices.",
-"Structured data can improve how pages appear in search results."
-],
-"url": "https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview"
-},
-{
-"slug": "on-page-seo-guide",
-"title": "Complete On-Page SEO Guide",
-"description": "Learn the essential on-page SEO techniques for higher rankings.",
-"content": [
-"Title tags remain one of the most important on-page ranking factors.",
-"Meta descriptions encourage users to click your pages.",
-"Heading tags improve readability and content organization.",
-"Image optimization improves page speed and accessibility.",
-"Internal links help distribute authority throughout your website."
-],
-"url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
-},
-{
-"slug": "content-marketing-strategy",
-"title": "Content Marketing Strategy Guide",
-"description": "Build a content strategy that attracts visitors and grows organic traffic.",
-"content": [
-"Content marketing focuses on creating useful information for your audience.",
-"Publishing consistently helps build authority and trust.",
-"Understanding your audience is essential for creating successful content.",
-"Evergreen content can drive traffic for years.",
-"Regular updates keep content relevant and accurate."
-],
-"url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
-},
-{
-"slug": "website-speed-optimization",
-"title": "Website Speed Optimization Tips",
-"description": "Practical techniques to improve website loading speed and user experience.",
-"content": [
-"Fast websites provide a better user experience.",
-"Compressing images can significantly reduce page size.",
-"Caching improves loading times for returning visitors.",
-"Minifying CSS and JavaScript reduces unnecessary code.",
-"Improving performance can lower bounce rates."
-],
-"url": "https://web.dev/articles/fast"
-},
-{
-"slug": "link-building-strategies",
-"title": "Link Building Strategies",
-"description": "Discover effective and sustainable link building methods.",
-"content": [
-"Backlinks are signals of trust and authority.",
-"Creating useful resources encourages natural links.",
-"Guest posting can increase exposure and build relationships.",
-"Internal linking is also an important part of SEO.",
-"Quality backlinks are generally more valuable than large quantities of weak links."
-],
-"url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
-},
-{
-"slug": "mobile-seo-best-practices",
-"title": "Mobile SEO Best Practices",
-"description": "Learn how to optimize websites for mobile users and search engines.",
-"content": [
-"Mobile devices generate the majority of web traffic worldwide.",
-"Responsive design provides a consistent experience across devices.",
-"Fast loading times are especially important on mobile networks.",
-"Large text and touch-friendly buttons improve usability.",
-"Google primarily uses mobile-first indexing."
-],
-"url": "https://developers.google.com/search/mobile-sites"
-},
-{
-"slug": "local-seo-guide",
-"title": "Local SEO Guide",
-"description": "Improve local search visibility and attract nearby customers.",
-"content": [
-"Local SEO helps businesses appear in nearby searches.",
-"Accurate business information improves trust and visibility.",
-"Customer reviews play an important role in local rankings.",
-"Location-specific content can attract nearby customers.",
-"Maintaining consistent citations strengthens local presence."
-],
-"url": "https://developers.google.com/search/docs/appearance/local-business"
-},
-{
-"slug": "structured-data-explained",
-"title": "Structured Data Explained",
-"description": "Understand schema markup and rich results in search engines.",
-"content": [
-"Structured data helps search engines understand page content.",
-"Schema markup can enable enhanced search results.",
-"JSON-LD is the recommended implementation format.",
-"Testing structured data ensures correct implementation.",
-"Rich results can improve search visibility and click-through rates."
-],
-"url": "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data"
-}
-]
-[
+  {
+    "title": "SEO Basics for Beginners",
+    "description": "Learn the fundamentals of SEO and how to optimize your website for search engines.",
+    "slug": "seo-basics-for-beginners",
+    "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+    "category": "seo"
+  },
+  {
+    "title": "Keyword Research Guide",
+    "description": "Discover how to find profitable keywords that drive organic traffic.",
+    "slug": "keyword-research-guide",
+    "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+    "category": "seo"
+  },
   {
     "title": "Technical SEO Checklist",
-    "description": "Complete SEO technical guide",
+    "description": "Complete technical SEO checklist to improve indexing and rankings.",
     "slug": "technical-seo-checklist",
-    "url": "https://developers.google.com/search/docs",
+    "url": "https://developers.google.com/search/docs/crawling-indexing",
+    "category": "seo"
+  },
+  {
+    "title": "Complete On-Page SEO Guide",
+    "description": "Learn the best on-page SEO techniques for higher Google rankings.",
+    "slug": "on-page-seo-guide",
+    "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+    "category": "seo"
+  },
+  {
+    "title": "Content Marketing Strategy Guide",
+    "description": "Build a content marketing strategy that attracts traffic and conversions.",
+    "slug": "content-marketing-strategy",
+    "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+    "category": "seo"
+  },
+  {
+    "title": "Website Speed Optimization Tips",
+    "description": "Improve website loading speed and Core Web Vitals performance.",
+    "slug": "website-speed-optimization",
+    "url": "https://web.dev/articles/vitals",
+    "category": "seo"
+  },
+  {
+    "title": "Link Building Strategies",
+    "description": "Explore effective link building techniques for SEO success.",
+    "slug": "link-building-strategies",
+    "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+    "category": "seo"
+  },
+  {
+    "title": "Mobile SEO Best Practices",
+    "description": "Optimize your website for mobile-first indexing and mobile users.",
+    "slug": "mobile-seo-best-practices",
+    "url": "https://developers.google.com/search/mobile-sites",
+    "category": "seo"
+  },
+  {
+    "title": "Local SEO Guide",
+    "description": "Learn how to rank local businesses in Google Search and Maps.",
+    "slug": "local-seo-guide",
+    "url": "https://developers.google.com/search/docs/fundamentals/local-business",
+    "category": "seo"
+  },
+  {
+    "title": "Structured Data Explained",
+    "description": "Understand structured data and how it improves search visibility.",
+    "slug": "structured-data-explained",
+    "url": "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data",
     "category": "seo"
   },
   {
     "title": "How AI Is Changing SEO",
-    "description": "AI impact on SEO",
-    "slug": "ai-changing-seo",
-    "url": "https://developers.google.com/search",
+    "description": "Discover how artificial intelligence is transforming search engine optimization.",
+    "slug": "how-ai-is-changing-seo",
+    "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
     "category": "ai"
+  },
+  {
+    "title": "Best AI Tools for Content Creation",
+    "description": "Explore the top AI tools for writing, research, and content generation.",
+    "slug": "best-ai-tools-for-content-creation",
+    "url": "https://ai.google/",
+    "category": "ai"
+  },
+  {
+    "title": "Prompt Engineering Guide",
+    "description": "Learn prompt engineering techniques for better AI outputs.",
+    "slug": "prompt-engineering-guide",
+    "url": "https://ai.google/",
+    "category": "ai"
+  },
+  {
+    "title": "Cybersecurity Best Practices",
+    "description": "Protect your systems with essential cybersecurity best practices.",
+    "slug": "cybersecurity-best-practices",
+    "url": "https://www.cisa.gov/cybersecurity",
+    "category": "cybersecurity"
+  },
+  {
+    "title": "How to Prevent Phishing Attacks",
+    "description": "Learn how to recognize and prevent phishing attacks.",
+    "slug": "prevent-phishing-attacks",
+    "url": "https://www.cisa.gov/phishing",
+    "category": "cybersecurity"
+  },
+  {
+    "title": "Password Security Guide",
+    "description": "Learn how to create and manage strong passwords securely.",
+    "slug": "password-security-guide",
+    "url": "https://www.cisa.gov/secure-our-world/use-strong-passwords",
+    "category": "cybersecurity"
+  },
+  {
+    "title": "Best VPN Services Compared",
+    "description": "Compare the best VPN services for privacy and security.",
+    "slug": "best-vpn-services-compared",
+    "url": "https://www.cisa.gov/",
+    "category": "money"
+  },
+  {
+    "title": "Best Web Hosting Services",
+    "description": "Find the best web hosting providers for blogs and businesses.",
+    "slug": "best-web-hosting-services",
+    "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+    "category": "money"
+  },
+  {
+    "title": "Best SEO Tools for Agencies",
+    "description": "Compare the top SEO tools used by professional agencies.",
+    "slug": "best-seo-tools-for-agencies",
+    "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+    "category": "money"
+  },
+  {
+    "title": "Best Keyword Research Tools",
+    "description": "Discover the most powerful keyword research tools for SEO.",
+    "slug": "best-keyword-research-tools",
+    "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+    "category": "money"
   }
 ]
