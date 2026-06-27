@@ -5,34 +5,120 @@
 
   <title>{{title}}</title>
   <meta name="description" content="{{description}}">
-  <link rel="canonical" href="https://latesthackernews.github.io/blog/{{slug}}.html">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="canonical" href="https://latesthackernews.github.io/blog/{{slug}}.html">
   <link rel="stylesheet" href="/css/style.css">
 
-  <!-- Schema.org -->
+  <!-- SEO OpenGraph -->
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://latesthackernews.github.io/blog/{{slug}}.html">
+
+  <!-- Structured Data (SEO PRO MAX) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     "headline": "{{title}}",
-    "description": "{{description}}"
+    "description": "{{description}}",
+    "url": "https://latesthackernews.github.io/blog/{{slug}}.html",
+    "author": {
+      "@type": "Organization",
+      "name": "Latest Hacker News"
+    }
   }
   </script>
+
+  <!-- Reading Progress Bar -->
+  <style>
+    #progressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 0%;
+      background: #00c3ff;
+      z-index: 9999;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .author-box {
+      margin-top: 40px;
+      padding: 15px;
+      border-top: 1px solid #ddd;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .related {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .related a {
+      display: block;
+      margin: 5px 0;
+    }
+  </style>
 </head>
 
 <body>
 
-<a href="/blog/">← Back to Blog</a>
+<div id="progressBar"></div>
 
-<h1>{{title}}</h1>
+<div class="container">
 
-<div id="content">
-{{content}}
+  <a class="back" href="/blog/">← Back to Blog</a>
+
+  <h1>{{title}}</h1>
+
+  <p><em>{{description}}</em></p>
+
+  <div id="content">
+    {{content}}
+  </div>
+
+  <p>
+    <a href="{{url}}" target="_blank">External Source</a>
+  </p>
+
+  <!-- Related Articles (will be injected by JS or generator later) -->
+  <div class="related">
+    <h2>Related Articles</h2>
+    <a href="/blog/">View all articles →</a>
+  </div>
+
+  <!-- Author Box -->
+  <div class="author-box">
+    <strong>About Latest Hacker News</strong><br>
+    We publish SEO, AI, Cybersecurity and Tech guides optimized for search engines.
+  </div>
+
 </div>
 
-<p>
-<a href="{{url}}" target="_blank">External Source</a>
-</p>
+<script>
+  // Progress bar
+  window.addEventListener("scroll", function () {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.getElementById("progressBar").style.width = scrolled + "%";
+  });
+</script>
 
 </body>
 </html>
