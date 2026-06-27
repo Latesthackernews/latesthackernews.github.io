@@ -133,3 +133,19 @@
 "url": "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data"
 }
 ]
+[
+  {
+    "title": "Technical SEO Checklist",
+    "description": "Complete SEO technical guide",
+    "slug": "technical-seo-checklist",
+    "url": "https://developers.google.com/search/docs",
+    "category": "seo"
+  },
+  {
+    "title": "How AI Is Changing SEO",
+    "description": "AI impact on SEO",
+    "slug": "ai-changing-seo",
+    "url": "https://developers.google.com/search",
+    "category": "ai"
+  }
+]
