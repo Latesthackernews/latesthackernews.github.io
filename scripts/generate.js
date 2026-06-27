@@ -1,13 +1,17 @@
 const fs = require("fs");
 require("dotenv").config();
+
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+const genAI = new GoogleGenerativeAI(
+  process.env.GEMINI_API_KEY
+);
 
-/* =========================
-   AI ARTICLE GENERATION
-========================= */
+/* ==========================
+   GENERATE ARTICLE WITH AI
+========================== */
 async function generateArticle(title, description) {
+
   const model = genAI.getGenerativeModel({
     model: "gemini-2.5-flash"
   });
@@ -15,82 +19,115 @@ async function generateArticle(title, description) {
   const prompt = `
 You are an expert SEO content writer.
 
-Write a HIGH QUALITY SEO article.
+Write a comprehensive SEO article.
 
 TITLE: ${title}
-DESCRIPTION: ${description}
+
+DESCRIPTION:
+${description}
 
 RULES:
 - Minimum 2000 words
 - Output ONLY HTML
 - Use <h2>, <h3>, <p>, <ul>, <li>
-- Add introduction
-- Add step-by-step sections
-- Add real examples
+- Add an introduction
+- Add practical examples
 - Add FAQ section
 - Add conclusion
-- SEO optimized
+- Optimize for SEO
+- Do NOT use markdown
 `;
 
   try {
+
     const result = await model.generateContent(prompt);
+
     let text = result.response.text();
 
-    // clean possible markdown
+    // Remove markdown code fences if Gemini adds them
     text = text.replace(/```html|```/g, "");
 
     return text;
 
-  } catch (err) {
-    console.log("⚠️ AI failed, using fallback for:", title);
+  } catch (error) {
+
+    console.log(
+      "Gemini failed for:",
+      title
+    );
+
+    console.log(error.message);
 
     return `
       <h2>${title}</h2>
+
       <p>${description}</p>
-      <p>Content temporarily unavailable due to API limits.</p>
+
+      <p>
+      This article is currently being updated.
+      Please check back soon.
+      </p>
     `;
   }
 }
 
-/* =========================
-   INTERNAL LINKING (SEO SILO)
-========================= */
-function generateInternalLinks(posts, currentSlug, category = null) {
+/* ==========================
+   INTERNAL LINKING SYSTEM
+========================== */
+function generateInternalLinks(
+  posts,
+  currentSlug,
+  currentCategory
+) {
 
-  let pool = posts.filter(p => p.slug !== currentSlug);
-
-  // OPTIONAL: silo filtering if category exists
-  if (category) {
-    pool = pool.filter(p => p.category === category);
-  }
-
-  const related = pool
-    .sort(() => 0.5 - Math.random())
+  const related = posts
+    .filter(post =>
+      post.slug !== currentSlug &&
+      post.category === currentCategory
+    )
     .slice(0, 5);
 
-  return `
-    <section class="related-posts">
-      <h2>Related Articles</h2>
-      <ul>
-        ${related.map(post => `
-          <li>
-            <a href="/blog/${post.slug}.html">
-              ${post.title}
-            </a>
-          </li>
-        `).join("")}
-      </ul>
-    </section>
-  `;
+  if (related.length === 0) return "";
+
+  let html = `
+<section class="related-posts">
+
+<h2>Related Articles</h2>
+
+<ul>
+`;
+
+  related.forEach(post => {
+
+    html += `
+<li>
+<a href="/blog/${post.slug}.html">
+${post.title}
+</a>
+</li>
+`;
+
+  });
+
+  html += `
+</ul>
+
+</section>
+`;
+
+  return html;
 }
 
-/* =========================
-   MAIN BUILD SYSTEM
-========================= */
+/* ==========================
+   BUILD WEBSITE
+========================== */
 async function buildSite() {
 
   const posts = JSON.parse(
-    fs.readFileSync("./content/posts.json", "utf8")
+    fs.readFileSync(
+      "./content/posts.json",
+      "utf8"
+    )
   );
 
   const template = fs.readFileSync(
@@ -101,13 +138,13 @@ async function buildSite() {
   let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://latesthackernews.github.io/</loc>
-  </url>
+<url>
+<loc>https://latesthackernews.github.io/</loc>
+</url>
 
-  <url>
-    <loc>https://latesthackernews.github.io/blog/</loc>
-  </url>
+<url>
+<loc>https://latesthackernews.github.io/blog/</loc>
+</url>
 `;
 
   for (const post of posts) {
@@ -119,18 +156,34 @@ async function buildSite() {
       post.description
     );
 
-    const internalLinks = generateInternalLinks(
-      posts,
-      post.slug,
-      post.category
-    );
+    const internalLinks =
+      generateInternalLinks(
+        posts,
+        post.slug,
+        post.category
+      );
 
     let html = template;
 
-    html = html.replace(/{{title}}/g, post.title);
-    html = html.replace(/{{description}}/g, post.description);
-    html = html.replace(/{{slug}}/g, post.slug);
-    html = html.replace(/{{url}}/g, post.url);
+    html = html.replace(
+      /{{title}}/g,
+      post.title
+    );
+
+    html = html.replace(
+      /{{description}}/g,
+      post.description
+    );
+
+    html = html.replace(
+      /{{slug}}/g,
+      post.slug
+    );
+
+    html = html.replace(
+      /{{url}}/g,
+      post.url || "#"
+    );
 
     html = html.replace(
       "{{content}}",
@@ -144,19 +197,32 @@ async function buildSite() {
     );
 
     sitemap += `
-  <url>
-    <loc>https://latesthackernews.github.io/blog/${post.slug}.html</loc>
-  </url>`;
+<url>
+<loc>
+https://latesthackernews.github.io/blog/${post.slug}.html
+</loc>
+</url>
+`;
 
-    console.log("Generated:", post.slug);
+    console.log(
+      "Generated:",
+      post.slug
+    );
   }
 
   sitemap += `
-</urlset>`;
+</urlset>
+`;
 
-  fs.writeFileSync("./sitemap.xml", sitemap, "utf8");
+  fs.writeFileSync(
+    "./sitemap.xml",
+    sitemap,
+    "utf8"
+  );
 
-  console.log("🚀 SITE GENERATED SUCCESSFULLY");
+  console.log(
+    "🚀 Site generation completed successfully"
+  );
 }
 
 buildSite().catch(console.error);
